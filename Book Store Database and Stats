@@ -1,0 +1,59 @@
+--Create a grocery store database
+
+CREATE TABLE books
+    (id INTEGER PRIMARY KEY,
+    Name TEXT,
+    Author TEXT,
+    Year_published INTEGER,
+    Price NUMERIC);
+
+INSERT INTO books
+    VALUES(1, 'The Final Spark', 'Richard Paul Evans', 2017, 12.99);
+INSERT INTO books
+    VALUES(2, 'Red Queen', 'Victoria Aveyard', 2015, 6.98);
+INSERT INTO books
+    VALUES(3, 'Ready Player One', 'Ernest Cline', 2011, 10.45);
+INSERT INTO books
+    VALUES(4, 'The Lightning Thief', 'Rick Riordan', 2005, 6.99);
+INSERT INTO books
+    VALUES(5, 'The Hunger Games', 'Suzanne Collins', 2008, 12.69);
+INSERT INTO books
+    VALUES(6, 'Eragon', 'Christopher Paolini', 2002, 19.40);
+INSERT INTO books
+    VALUES(7, 'The Finisher', 'David Baldacci', 2014, 8.19);
+INSERT INTO books
+    VALUES(8, 'Divergent', 'Veronica Roth', 2011, 9.06);
+INSERT INTO books
+    VALUES(9, 'The Maze Runner', 'James Dashner', 2009, 9.57);
+INSERT INTO books
+    VALUES(10, 'Graceling', 'Kristin Cashore', 2008, 9.79);
+INSERT INTO books
+    VALUES(11, 'Artemis Fowl', 'Eoin Colfer', 2001, 8.87);
+INSERT INTO books
+    VALUES(12, 'The Merchant of Death', 'D.J. MacHale', 2002, 9.89);
+INSERT INTO books
+    VALUES(13, 'Dark Life', 'Kat Falls', 2010, 8.99);
+INSERT INTO books
+    VALUES(14, 'A Confusion of Princes', 'Garth Nix', 2012, 9.99);
+INSERT INTO books
+    VALUES(15, 'Enclave','Ann Aguirre', 2011, 9.99);
+    
+    
+--display the database ordered by price. 
+SELECT * FROM books ORDER BY price;
+
+--what is the maximum price of books?
+SELECT name, MAX(price) AS most_expensive_book
+FROM books;
+
+--what is the minimum price of books?
+SELECT name, MIN(price) AS least_expensive_book
+FROM books;
+
+--what is the avg price of books?
+SELECT AVG(price) AS average_book_price
+FROM books;
+
+--what is the total price of all books?
+SELECT SUM(price) AS sum_of_price
+FROM books;
